@@ -4,10 +4,10 @@
     <ul class="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
         @foreach ($posts as $post)
             <li>
-                <a class="flex bg-white rounded-md  shadow-md p-5 w-full hover:shadow-lg hover:scale-105 transition"
-                    href="#">
-                    {{ $post->title }}
-                </a>
+                <a class="flex bg-white rounded-md shadow-md p-5 w-full hover:shadow-lg hover:scale-105 transition"
+                href="{{ route('posts.show', $post) }}">
+                {{ $post->title }}
+            </a>
             </li>
         @endforeach
     </ul>
