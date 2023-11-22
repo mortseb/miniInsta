@@ -16,17 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [HomepageController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/', [HomepageController::class, 'index']);
-Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
-Route::get('/posts/{id}', [PostsController::class, 'show'])->name('posts.show');
+
+    Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
+    Route::get('/posts/{id}', [PostsController::class, 'show'])->name('posts.show');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
