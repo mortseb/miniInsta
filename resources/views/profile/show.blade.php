@@ -14,12 +14,11 @@
         <form action="{{ route('users.follow', $user) }}" method="POST">
             @csrf
             <button type="submit">
-                <!-- Icône de suivi (exemple: icône de coeur) -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M5.121 15.121a4 4 0 100-5.656 4 4 0 000 5.656zM19 9l-7 7-7-7" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
+
             </button>
         </form>
     @else
@@ -27,14 +26,16 @@
             @csrf
             @method('DELETE')
             <button type="submit">
-                <!-- Icône de désabonnement (exemple: icône de croix) -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
+
             </button>
         </form>
     @endif
+
 
     <div class="mt-8">
         <h2 class="font-bold text-xl mb-4">Posts</h2>
