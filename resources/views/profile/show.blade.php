@@ -4,6 +4,7 @@
         <div class="ml-4 flex flex-col">
             <div class="text-gray-800 font-bold">{{ $user->name }}</div>
             <div class="text-gray-700 text-sm">{{ $user->email }}</div>
+            <div class="text-gray-700 text-sm">{{ $user->bio }}</div>
             <div class="text-gray-500 text-xs">
                 Membre depuis {{ $user->created_at->diffForHumans() }}
             </div>
