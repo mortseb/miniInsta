@@ -7,9 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Posts extends Model
 {
+    public $timestamps = false;
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-    use HasFactory;
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class, 'posts_id');
+    }
 }

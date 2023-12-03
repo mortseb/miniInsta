@@ -18,7 +18,6 @@ class PostsFactory extends Factory
     public function definition()
     {
         return [
-            'title' => fake()->bs(),
             'body' => fake()->realTextBetween($minNbChars = 500, $maxNbChars = 2000),
             'img_path' => function () {
                 $absolutePath = fake()->image(storage_path('app/public/images'), 640, 480, 'cats', true);
