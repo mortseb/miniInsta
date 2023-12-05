@@ -20,7 +20,9 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->text('bio')->nullable();
-            $table->string('avatar_path')->nullable();
+
+            // Définir un chemin d'avatar par défaut
+            $table->string('avatar_path')->default('avatars/default.png')->nullable();
         });
     }
 
